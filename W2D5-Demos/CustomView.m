@@ -1,10 +1,10 @@
-//
-//  CustomView.m
-//  W2D5-Demos
-//
-//  Created by steve on 2017-03-16.
-//  Copyright © 2017 steve. All rights reserved.
-//
+  //
+  //  CustomView.m
+  //  W2D5-Demos
+  //
+  //  Created by steve on 2017-03-16.
+  //  Copyright © 2017 steve. All rights reserved.
+  //
 
 #import "CustomView.h"
 
@@ -18,7 +18,7 @@
 //  NSLog(@"location in view: %@", NSStringFromCGPoint(locationInView) );
 //  NSLog(@"previous location in view: %@", NSStringFromCGPoint(previousLocationInView));
 //}
-
+//
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //  
 //}

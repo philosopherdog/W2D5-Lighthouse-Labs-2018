@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,19 +29,57 @@
                                 <color key="textColor" red="0.55444359779999997" green="0.75043636560000004" blue="0.91378164289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IP6-gO-8uF">
+                                <rect key="frame" x="20" y="120" width="335" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LB8-gy-09e">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ssq-GL-Yh2">
+                                        <rect key="frame" x="0.0" y="80.5" width="335" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UpI-K1-tOO">
+                                        <rect key="frame" x="150.5" y="170" width="34" height="30"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HjI-CI-eCb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ssq-GL-Yh2" secondAttribute="trailing" id="8Jh-Ak-tl6"/>
+                                    <constraint firstItem="ssq-GL-Yh2" firstAttribute="leading" secondItem="IP6-gO-8uF" secondAttribute="leading" id="8cf-Mu-N9G"/>
+                                    <constraint firstAttribute="trailing" secondItem="LB8-gy-09e" secondAttribute="trailing" id="JS0-od-IBz"/>
+                                    <constraint firstAttribute="height" constant="200" id="OUi-uK-xWh"/>
+                                    <constraint firstItem="LB8-gy-09e" firstAttribute="leading" secondItem="IP6-gO-8uF" secondAttribute="leading" id="VTE-gY-XbP"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.94246441130000003" green="0.83959698679999994" blue="0.35277429220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.88460803030000001" green="0.44827917220000002" blue="0.35293778780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="IP6-gO-8uF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="GfC-Ul-I4w"/>
                             <constraint firstItem="RK3-Vg-5cp" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="a8K-vs-wVY"/>
+                            <constraint firstItem="IP6-gO-8uF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="ddk-xp-cl0"/>
                             <constraint firstItem="RK3-Vg-5cp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ruP-xg-C95"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RK3-Vg-5cp" secondAttribute="bottom" constant="20" id="wfa-cw-XJe"/>
+                            <constraint firstAttribute="trailing" secondItem="IP6-gO-8uF" secondAttribute="trailing" constant="20" id="yOk-R2-pAu"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="esq-MA-1D8" appends="YES" id="kIF-vF-Nfx"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="LB8-gy-09e" id="PHl-cY-C6o"/>
+                        <outlet property="textField" destination="ssq-GL-Yh2" id="dao-jS-ZBp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="esq-MA-1D8"/>
@@ -69,6 +108,9 @@
                                 <color key="textColor" red="0.55444359779999997" green="0.75043636560000004" blue="0.91378164289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="T6s-fO-9qi" id="I3D-9x-qtX"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.32156862745098036" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
@@ -248,17 +290,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBm-S2-Lpo" customClass="TopView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="334" id="gSz-Zk-xXb"/>
-                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPJ-e7-8Fr" customClass="BottomView">
+                                <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                                <color key="backgroundColor" red="0.95216627060000003" green="1" blue="0.350324146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZBm-S2-Lpo" firstAttribute="top" secondItem="J0g-kK-TDx" secondAttribute="top" id="1zv-on-QLT"/>
+                            <constraint firstItem="eg9-87-Lr6" firstAttribute="top" secondItem="bPJ-e7-8Fr" secondAttribute="bottom" id="2a1-A2-DI0"/>
+                            <constraint firstItem="bPJ-e7-8Fr" firstAttribute="height" secondItem="ZBm-S2-Lpo" secondAttribute="height" id="NGw-Pc-BIc"/>
+                            <constraint firstItem="ZBm-S2-Lpo" firstAttribute="height" secondItem="J0g-kK-TDx" secondAttribute="height" multiplier="0.5" id="VwC-XU-ufP"/>
+                            <constraint firstAttribute="trailing" secondItem="bPJ-e7-8Fr" secondAttribute="trailing" id="Wxv-Pz-FdC"/>
                             <constraint firstAttribute="trailing" secondItem="ZBm-S2-Lpo" secondAttribute="trailing" id="fet-gr-zfW"/>
+                            <constraint firstItem="bPJ-e7-8Fr" firstAttribute="leading" secondItem="J0g-kK-TDx" secondAttribute="leading" id="nvz-rb-4fN"/>
                             <constraint firstItem="ZBm-S2-Lpo" firstAttribute="leading" secondItem="J0g-kK-TDx" secondAttribute="leading" id="sY1-yx-RyO"/>
                         </constraints>
                     </view>

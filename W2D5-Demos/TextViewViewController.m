@@ -10,7 +10,7 @@
 
 //TODO setup delegate in IB
 
-@interface TextViewViewController ()
+@interface TextViewViewController ()<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @end
 
@@ -31,7 +31,10 @@
 
 #pragma mark - Save
 
-- (IBAction)save:(UIBarButtonItem *)sender {}
+- (IBAction)save:(UIBarButtonItem *)sender {
+  
+  
+}
 
 #pragma mark - Delegate Methods
 
